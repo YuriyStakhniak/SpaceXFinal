@@ -8,11 +8,11 @@ public class SpaceXEngine implements Engine {
     private String name;
     private int height, width, weight, fuelConsumption, fuelTankSpace, power;
 
-    public SpaceXEngine(EngineModels engineModels, FuelTankModels fuelTank) {
+    public SpaceXEngine(EngineModels engineModels, FuelTankModels fuelTankModels) {
         this.name = engineModels.getName();
         this.height = engineModels.getHeight();
         this.width = engineModels.getWidth();
-        this.weight = engineModels.getWeigh();
+        this.weight = engineModels.getWeigh()+fuelTankModels.getWeight();
         this.fuelConsumption = engineModels.getFuelConsumption();
         this.fuelTankSpace = engineModels.getFuelTankSpace();
         this.power = engineModels.getPower();
@@ -20,6 +20,21 @@ public class SpaceXEngine implements Engine {
 
     @Override
     public int getEngineSize() {
-        return this.height*this.width;
+        return 0;
+    }
+
+    @Override
+    public int getEngineTotalWeight() {
+        return 0;
+    }
+
+    @Override
+    public int getEnginePower() {
+        return 0;
+    }
+
+    @Override
+    public int getFuelTankSpace() {
+        return 0;
     }
 }
